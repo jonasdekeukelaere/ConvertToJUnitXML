@@ -22,7 +22,7 @@ class ConvertStandardJsCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('convert:standardjs')
@@ -36,7 +36,7 @@ class ConvertStandardJsCommand extends Command
             );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jUnitReport = $this->converter->convert(
             $input->getArgument('input')

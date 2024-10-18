@@ -22,7 +22,7 @@ class ConvertNpmAuditCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('convert:npm-audit')
@@ -36,7 +36,7 @@ class ConvertNpmAuditCommand extends Command
             );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($input->hasArgument('input')
             && $input->getArgument('input') !== null

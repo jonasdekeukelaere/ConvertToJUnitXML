@@ -22,7 +22,7 @@ class ConvertBashGrepCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('convert:grep')
@@ -36,7 +36,7 @@ class ConvertBashGrepCommand extends Command
             );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jUnitReport = $this->converter->convert(
             (string) $input->getArgument('input')

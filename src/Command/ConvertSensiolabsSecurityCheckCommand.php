@@ -22,7 +22,7 @@ class ConvertSensiolabsSecurityCheckCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('convert:sensiolabs-security-check')
@@ -36,7 +36,7 @@ class ConvertSensiolabsSecurityCheckCommand extends Command
             );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jUnitReport = $this->converter->convert(
             $input->getArgument('input')
